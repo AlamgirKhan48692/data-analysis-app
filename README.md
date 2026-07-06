@@ -4,6 +4,16 @@ A modern full-stack **Data Analysis Web Application** built with **React**, **Fl
 
 ---
 
+# 🚀 Live Demo
+
+🌐 Frontend:
+https://data-analysis-app-seven.vercel.app/
+
+🔗 Backend API:
+https://your-backend-url.com/
+
+---
+
 ## 🚀 Features
 
 ### Authentication
@@ -188,16 +198,6 @@ npm run dev
 ### Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
-
----
-
-# 🚀 Live Demo
-
-🌐 Frontend:
-https://data-analysis-app-seven.vercel.app/
-
-🔗 Backend API:
-https://your-backend-url.com/
 
 ---
 
