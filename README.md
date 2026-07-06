@@ -1,135 +1,240 @@
-# 📊 Data Analysis Project
+# 📊 Data Analysis App
 
-A full-stack Data Analysis web application built with **React**, **Flask**, and **MySQL**. Users can register, log in, and manage datasets through a clean and responsive interface.
+A modern full-stack **Data Analysis Web Application** built with **React**, **Flask**, and **MySQL**. The application provides a secure authentication system and allows users to manage datasets through a clean, responsive, and user-friendly interface.
 
 ---
 
 ## 🚀 Features
 
-- 👤 User Registration
-- 🔐 User Login
-- 🔒 Password Hashing
-- 📂 Dataset Management (CRUD)
-- 🌐 REST API with Flask
-- ⚡ React + Vite Frontend
-- 🗄️ MySQL Database
-- 🔧 Environment Variables
-- 📱 Responsive UI
+### Authentication
 
----
+* ✅ User Registration
+* ✅ Secure User Login
+* ✅ Password Hashing
+* ✅ Session-Based Authentication
 
-## 🛠️ Tech Stack
+### Dataset Management
+
+* ✅ Create Dataset
+* ✅ View Dataset
+* ✅ Update Dataset
+* ✅ Delete Dataset (CRUD Operations)
 
 ### Frontend
-- React
-- Vite
-- CSS
-- JavaScript
+
+* ⚛️ React + Vite
+* 📱 Responsive Design
+* 🎨 Modern User Interface
+* ⚡ Fast Performance
 
 ### Backend
-- Flask
-- Flask SQLAlchemy
-- Flask CORS
-- PyMySQL
+
+* 🐍 Flask REST API
+* 🔐 Secure Authentication
+* 🌐 CORS Enabled
+* 📦 SQLAlchemy ORM
 
 ### Database
-- MySQL
 
-### Tools
-- Git
-- GitHub
-- VS Code
+* 🗄️ MySQL Database
+* 📊 Efficient Data Storage
 
 ---
 
-## 📁 Project Structure
+# 🛠️ Tech Stack
 
-```
-DataAnalysisProject/
+## Frontend
+
+* React
+* Vite
+* JavaScript (ES6+)
+* CSS
+
+## Backend
+
+* Flask
+* Flask SQLAlchemy
+* Flask CORS
+* PyMySQL
+
+## Database
+
+* MySQL
+
+## Development Tools
+
+* Git
+* GitHub
+* VS Code
+
+---
+
+# 📁 Project Structure
+
+```text
+data-analysis-app/
 │
 ├── backend/
 │   ├── app.py
 │   ├── config.py
-│   ├── database/
 │   ├── models/
 │   ├── routes/
-│   └── ...
+│   ├── database/
+│   ├── requirements.txt
+│   └── .env
 │
-└── frontend/
-    ├── src/
-    ├── public/
-    └── ...
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### Clone the repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/AlamgirKhan48692/data-analysis-app.git
 ```
 
-### Backend
-
 ```bash
-cd backend
-pip install -r requirements.txt
-python app.py
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
+cd data-analysis-app
 ```
 
 ---
 
-## 🌱 Environment Variables
+## 2. Backend Setup
 
-Create a `.env` file inside the backend folder.
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file:
 
 ```env
 DATABASE_URL=your_database_url
 SECRET_KEY=your_secret_key
 ```
 
----
+Run the Flask server:
 
-## 📸 Screenshots
-
-Coming Soon...
-
----
-
-## 🚀 Live Demo
-
-Frontend: Coming Soon
-
-Backend API: Coming Soon
+```bash
+python app.py
+```
 
 ---
 
-## 📅 Future Improvements
+## 3. Frontend Setup
 
-- JWT Authentication
-- Protected Routes
-- Logout
-- Loading Spinner
-- Better Validation
-- Profile Page
-- Search
-- Pagination
-- Email Verification
-- Password Reset
+Open a new terminal:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
 
 ---
 
-## 👨‍💻 Author
+# 🌐 API Endpoints
+
+| Method | Endpoint         | Description         |
+| ------ | ---------------- | ------------------- |
+| POST   | `/register`      | Register a new user |
+| POST   | `/login`         | User login          |
+| GET    | `/datasets`      | Get all datasets    |
+| POST   | `/datasets`      | Create a dataset    |
+| PUT    | `/datasets/<id>` | Update a dataset    |
+| DELETE | `/datasets/<id>` | Delete a dataset    |
+
+---
+
+# 📸 Screenshots
+
+
+### Login Page
+
+![Login](screenshots/login.png)
+
+---
+
+### Registration Page
+
+![Register](screenshots/register.png)
+
+---
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+# 🚀 Live Demo
+
+🌐 Frontend:
+https://data-analysis-app-seven.vercel.app/
+
+🔗 Backend API:
+https://your-backend-url.com/
+
+---
+
+# 🔮 Future Improvements
+
+* 🔐 JWT Authentication
+* 🛡 Protected Routes
+* 🚪 Logout
+* 👤 User Profile
+* 📧 Email Verification
+* 🔄 Password Reset
+* 🔍 Search Functionality
+* 📄 Pagination
+* 📊 Dashboard Analytics
+* 🌙 Dark Mode
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Push the branch.
+5. Open a Pull Request.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
 
 **Alamgir Khan**
 
