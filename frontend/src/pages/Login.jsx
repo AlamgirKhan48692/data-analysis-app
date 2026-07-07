@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function Login(){
 
@@ -10,8 +11,7 @@ function Login(){
         email: "",
         password: ""
     });
-    const [message, setMessage] = useState("");
-    const [success, setSuccess] = useState(false);
+    
     const [showPassword, setShowPassword] = useState(false);
 
     const handleChange = (e) => {
@@ -35,13 +35,11 @@ function Login(){
 
         const data = await response.json();
 
-        setMessage(data.message);
-
-        setTimeout(() => {
-            setMessage("");
-        }, 3000);
-
-        setSuccess(data.success);
+        if (data.success) {
+            toast.success(data.message);
+        } else {
+            toast.error(data.message);
+        }
 
         if (data.success){
             setFormData({
@@ -84,10 +82,7 @@ function Login(){
                     </div>
                     <br />
                     <button>Login</button>
-                    {message && (
-                        <p className={success ? "success-message" : "error-message"}>{message}</p>
-                    )}
-
+                    
                     <p className="auth-link">
                         Don't have an account?
                         <Link to="/register"> Register</Link>
