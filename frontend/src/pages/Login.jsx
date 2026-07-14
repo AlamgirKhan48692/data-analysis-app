@@ -43,7 +43,7 @@ function Login() {
         toast.success(data.message);
 
         // Save logged-in user
-        localStorage.setItem("username", data.username);
+        localStorage.setItem("username", data.user.username);
 
         setFormData({
           email: "",
