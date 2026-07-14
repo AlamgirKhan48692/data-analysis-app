@@ -42,6 +42,9 @@ function Login() {
       if (data.success) {
         toast.success(data.message);
 
+        // Save logged-in user
+        localStorage.setItem("username", data.username);
+
         setFormData({
           email: "",
           password: "",
@@ -50,7 +53,9 @@ function Login() {
         setTimeout(() => {
           navigate("/dashboard");
         }, 1000);
-      } else {
+      }
+      
+      else {
         toast.error(data.message);
       }
     } catch (error) {

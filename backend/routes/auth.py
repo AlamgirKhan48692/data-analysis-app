@@ -91,11 +91,15 @@ def login():
             "message": "User Not Found"
         }), 404
     
-    if check_password_hash(user.password,password):
-        
+    if check_password_hash(user.password, password):
         return jsonify({
             "success": True,
-            "message": "Login Successful"
+            "message": "Login Successful",
+            "user": {
+                "id": user.id,
+                "username": user.username,
+                "email": user.email
+            }
         }), 200
     
     return jsonify({
