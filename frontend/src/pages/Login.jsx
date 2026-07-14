@@ -29,11 +29,9 @@ function Login() {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
         method: "POST",
-
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json",
         },
-
         body: JSON.stringify(formData),
       });
 
@@ -42,8 +40,8 @@ function Login() {
       if (data.success) {
         toast.success(data.message);
 
-        // Save logged-in user
-        localStorage.setItem("username", data.user.username);
+        // Store logged-in user
+        localStorage.setItem("user", JSON.stringify(data.user));
 
         setFormData({
           email: "",
@@ -53,9 +51,7 @@ function Login() {
         setTimeout(() => {
           navigate("/dashboard");
         }, 1000);
-      }
-      
-      else {
+      } else {
         toast.error(data.message);
       }
     } catch (error) {

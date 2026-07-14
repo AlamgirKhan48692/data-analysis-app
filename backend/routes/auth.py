@@ -57,26 +57,20 @@ def register():
         "message": "User Register Successfully"
     }), 201
 
-@auth.route('/login', methods=["POST"])
+@auth.route("/login", methods=["POST"])
 def login():
 
     data = request.get_json()
 
-    email = data["email"]
-    password = data["password"]
-
-    if not email and not password:
-        return jsonify({
-            "success": False,
-            "message": "Email and Password are Required"
-        })
+    email = data.get("email")
+    password = data.get("password")
 
     if not email:
         return jsonify({
             "success": False,
             "message": "Email Required"
         }), 400
-    
+
     if not password:
         return jsonify({
             "success": False,
@@ -90,7 +84,7 @@ def login():
             "success": False,
             "message": "User Not Found"
         }), 404
-    
+
     if check_password_hash(user.password, password):
         return jsonify({
             "success": True,
@@ -101,7 +95,7 @@ def login():
                 "email": user.email
             }
         }), 200
-    
+
     return jsonify({
         "success": False,
         "message": "Login Failed"
