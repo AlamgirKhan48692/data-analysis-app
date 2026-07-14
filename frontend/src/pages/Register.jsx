@@ -87,7 +87,7 @@ function Register() {
       <div className="register-card">
         <h1>User Registration Form</h1>
 
-        <form onSubmit={submitFrom} autoComplete="off">
+        <form onSubmit={submitFrom}>
           <input
             type="text"
             name="username"
@@ -95,6 +95,7 @@ function Register() {
             value={formData.username}
             onChange={handleChange}
             disabled={loading}
+            autoComplete="name"
           />
 
           <input
@@ -103,7 +104,7 @@ function Register() {
             placeholder="Enter Your Email"
             value={formData.email}
             onChange={handleChange}
-            autoComplete="new-email"
+            autoComplete="email"
             disabled={loading}
           />
 
@@ -115,6 +116,7 @@ function Register() {
               value={formData.password}
               onChange={handleChange}
               disabled={loading}
+              autoComplete="new-password"
             />
 
             <span

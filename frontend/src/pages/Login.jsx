@@ -77,6 +77,7 @@ function Login() {
             value={formData.email}
             onChange={handleChange}
             disabled={loading}
+            autoComplete="username"
           />
 
           <br />
@@ -89,6 +90,7 @@ function Login() {
               value={formData.password}
               onChange={handleChange}
               disabled={loading}
+              autoComplete="current-password"
             />
 
             <span
