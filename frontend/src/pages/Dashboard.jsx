@@ -4,10 +4,14 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const user = JSON.parse(localStorage.getItem("user"));
+  const token = localStorage.getItem("token");
+
   const username = user?.username;
 
   const handleLogout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
+
     navigate("/");
   };
 

@@ -4,14 +4,18 @@ from routes.auth import auth
 from routes.dataset import dataset
 from config import Config
 from database.db import db
+from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
 
 app.config.from_object(Config)
 
+jwt = JWTManager(app)
+
 CORS(app)
 
 db.init_app(app)
+
 with app.app_context():
     db.create_all()
 

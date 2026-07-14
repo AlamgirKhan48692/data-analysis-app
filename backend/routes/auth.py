@@ -1,13 +1,15 @@
 from flask import Blueprint, jsonify, request
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
+from flask_jwt_extended import create_access_token
 
 from database.db import db
 from models.user import User
 
 auth = Blueprint("auth", __name__)
 
-@auth.route('/register', methods=["POST"])
+
+@auth.route("/register", methods=["POST"])
 def register():
 
     data = request.get_json()
@@ -21,7 +23,7 @@ def register():
     if not username:
         return jsonify({
             "success": False,
-            "message": " UserName is Required"
+            "message": "UserName is Required"
         }), 400
 
     if not email:
@@ -29,6 +31,7 @@ def register():
             "success": False,
             "message": "Email is Required"
         }), 400
+
     if not password:
         return jsonify({
             "success": False,
@@ -40,13 +43,13 @@ def register():
     if existing_user:
         return jsonify({
             "success": False,
-            "message": "Email already exist."
+            "message": "Email already exists."
         }), 409
-    
+
     user = User(
-        username = username,
-        email = email,
-        password = hash_password
+        username=username,
+        email=email,
+        password=hash_password
     )
 
     db.session.add(user)
@@ -54,8 +57,9 @@ def register():
 
     return jsonify({
         "success": True,
-        "message": "User Register Successfully"
+        "message": "User Registered Successfully"
     }), 201
+
 
 @auth.route("/login", methods=["POST"])
 def login():
@@ -86,9 +90,13 @@ def login():
         }), 404
 
     if check_password_hash(user.password, password):
+
+        access_token = create_access_token(identity=str(user.id))
+
         return jsonify({
             "success": True,
             "message": "Login Successful",
+            "token": access_token,
             "user": {
                 "id": user.id,
                 "username": user.username,

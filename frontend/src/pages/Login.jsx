@@ -40,7 +40,10 @@ function Login() {
       if (data.success) {
         toast.success(data.message);
 
-        // Store logged-in user
+        // Save JWT Token
+        localStorage.setItem("token", data.token);
+
+        // Save User
         localStorage.setItem("user", JSON.stringify(data.user));
 
         setFormData({
