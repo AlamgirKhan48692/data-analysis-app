@@ -5,6 +5,7 @@ backend/venv/
 backend/__pycache__/
 backend/*.pyc
 backend/.env
+backend/.env.production
 
 # ===========================
 # Frontend
@@ -22,14 +23,3 @@ frontend/dist/
 # ===========================
 .DS_Store
 Thumbs.db
-
-
-
-
-
-postgresql://users:5eY4WfZuAtBBdXVwtaE6Hsh1RPmSO7j6@dpg-d95j5q6q1p3s73d3lrig-a.oregon-postgres.render.com/data_analysis_40hm
-
-https://data-analysis-app-vhyf.onrender.com
-
-
-https://data-analysis-app-seven.vercel.app/

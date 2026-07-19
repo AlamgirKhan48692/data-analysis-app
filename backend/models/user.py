@@ -1,5 +1,6 @@
 from database.db import db
 
+
 class User(db.Model):
     __tablename__ = "users"
 
@@ -22,5 +23,12 @@ class User(db.Model):
     password = db.Column(
         db.String(255),
         nullable=False
+    )
 
+    # One User -> Many Data Sources
+    data_sources = db.relationship(
+        "DataSource",
+        backref="user",
+        lazy=True,
+        cascade="all, delete-orphan"
     )
